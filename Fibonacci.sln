@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci.SecondApp", "Fibonacci.SecondApp\Fibonacci.SecondApp.csproj", "{23A70EE2-1768-40E8-B8A6-861D7458D10E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci.FirstApp", "Fibonacci.FirstApp\Fibonacci.FirstApp.csproj", "{B5926D42-9FE4-41FD-8B5D-BA240DA3B41B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E1F57297-51C3-418D-B63D-46C6AC366D0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23A70EE2-1768-40E8-B8A6-861D7458D10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A70EE2-1768-40E8-B8A6-861D7458D10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A70EE2-1768-40E8-B8A6-861D7458D10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A70EE2-1768-40E8-B8A6-861D7458D10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5926D42-9FE4-41FD-8B5D-BA240DA3B41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5926D42-9FE4-41FD-8B5D-BA240DA3B41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5926D42-9FE4-41FD-8B5D-BA240DA3B41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5926D42-9FE4-41FD-8B5D-BA240DA3B41B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1F57297-51C3-418D-B63D-46C6AC366D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F57297-51C3-418D-B63D-46C6AC366D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F57297-51C3-418D-B63D-46C6AC366D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F57297-51C3-418D-B63D-46C6AC366D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC3B4A85-FB1C-46A2-8DA1-6098735AF577}
+	EndGlobalSection
+EndGlobal

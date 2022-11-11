@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  fibonacci.rabbitmq: # login guest:guest
+    image: rabbitmq:3-management
+
+  fibonacci.firstapp:
+    image: ${DOCKER_REGISTRY-}fibonaccifirstapp
+    build:
+      context: .
+      dockerfile: Fibonacci.FirstApp/Dockerfile
+    networks:
+      - shared-fibonacci-net
+
+  fibonacci.secondapp:
+    image: ${DOCKER_REGISTRY-}fibonaccisecondapp
+    build:
+      context: .
+      dockerfile: Fibonacci.SecondApp/Dockerfile
+    networks:
+      - shared-fibonacci-net
+
+volumes:
+  rabbitmq-data:
+
+networks:
+  shared-fibonacci-net:
+    name: fibonacciNet
+    driver: bridge
