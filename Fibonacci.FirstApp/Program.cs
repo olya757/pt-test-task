@@ -3,10 +3,11 @@ using Fibonacci.FirstApp.Services.Implementation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+Thread.Sleep(5000);
 Console.WriteLine(args.FirstOrDefault());
 var serviceProvider = new ServiceCollection()
             .AddSingleton<ICacheService<int, long>, CacheService<int, long>>()
-            .AddScoped<IHttpSender,HttpSender>()
+            .AddScoped<IHttpSender, HttpSender>()
             .AddScoped<IMessageBrokerService, MessageBrokerService>()
             .AddScoped<IHttpSyncronizationService, NumbersSynchronizationService>()
             .AddScoped<ICalculationService, CalculationService>()

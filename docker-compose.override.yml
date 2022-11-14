@@ -1,23 +1,37 @@
 version: '3.4'
 
 services:
-    fibonacci.rabbitmq: # login guest:guest
-        hostname: "rabbitmq"
-        ports:
-          - "25672:5672"
-          - "25673:5673"
-          - "35672:15672" 
-        networks:
-          - shared-fibonacci-net
-        volumes:      
-          - rabbitmq-data:/var/lib/rabbitmq/
+  fibonacci.rabbitmq:
+    # login guest:guest
+    hostname: "rabbitmq"
+    ports:
+      - "25672:5672"
+      - "35672:15672"
+    networks:
+      - shared-fibonacci-net
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq/
 
-    fibonacci.secondapp:
-        environment:
-          - ASPNETCORE_ENVIRONMENT=Development
-          - ASPNETCORE_URLS=http://+:80
-        ports:
-          - "5000:80"
-        volumes:
-          - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-          - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  fibonacci.secondapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - shared-fibonacci-net
+    ports:
+      - "5000:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  fibonacci.firstapp:
+    networks:
+      - shared-fibonacci-net
+
+volumes:
+  rabbitmq-data:
+
+
+networks:
+  shared-fibonacci-net:
+    name: fibonacciNet
+    driver: bridge

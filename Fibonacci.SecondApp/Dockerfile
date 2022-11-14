@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Fibonacci.SecondApp/Fibonacci.SecondApp.csproj", "Fibonacci.SecondApp/"]
-COPY ./certf.crt /usr/local/share/ca-certificates/certf.crt
+#COPY ./certf.crt /usr/local/share/ca-certificates/certf.crt
 RUN dotnet restore "Fibonacci.SecondApp/Fibonacci.SecondApp.csproj"
 COPY . .
 WORKDIR "/src/Fibonacci.SecondApp"
